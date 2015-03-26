@@ -14,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include_recipe 'golang::default'
+include_recipe 'golang::packages'
 include_recipe 'runit'
 
 directory node['bosun']['conf_dir']
+directory node['bosun']['log_dir']
 
 template "#{node['bosun']['conf_dir']}/bosun.conf" do
   cookbook node['bosun']['config_cookbook']
   source 'bosun.conf.erb'
 end
 
-runit_service 'bosun' do
-  finish node['bosun']['runit']['finish']
-end if node['bosun']['init_style'] == 'runit'
+runit_service 'bosun' if node['bosun']['init_style'] == 'runit'
