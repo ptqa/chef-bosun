@@ -6,8 +6,10 @@ default['bosun']['tsdb_port']       = '4242'
 
 default['bosun']['conf_dir']        = '/etc/bosun/'
 default['bosun']['log_dir']         = '/var/log/bosun/'
+default['bosun']['open_files']      = 65535
 
 default['bosun']['config_cookbook'] = 'bosun'
+
 
 # Use golang recipe to install bosun
 default['go']['packages']           = ['bosun.org/cmd/bosun']
