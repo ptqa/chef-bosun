@@ -1,7 +1,8 @@
 # chef-bosun
 Chef cookbook for bosun-server
 
-This cookbook is kinda usable, but it only installs bosun binary with runit service. IT DOES NOT INSTALLS OPENTSDB/HBASE.
+This cookbook is kinda usable, but it only installs bosun binary with runit service. ***IT DOES NOT INSTALL OPENTSDB/HBASE.***
+
 # Attributes
 This cookbook is attribute driven. List of attributes that you can change:
 
