@@ -1,4 +1,4 @@
 #!/bin/sh
 exec 2>&1
 ulimit -n <%= node['bosun']['open_files'] %>
-exec <%= node['go']['gobin'] %>/bosun -c=<%= node['bosun']['conf_dir'] %>/bosun.conf
+exec <%= node['bosun']['install_path'] %> -c=<%= node['bosun']['conf_dir'] %>/bosun.conf

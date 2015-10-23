@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include_recipe 'golang::packages'
+include_recipe "bosun::#{node['bosun']['install_style']}"
 include_recipe 'runit'
 
 directory node['bosun']['conf_dir']
