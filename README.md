@@ -8,6 +8,8 @@ This cookbook is attribute driven. List of attributes that you can change:
 
 * `node['bosun']['tsdb_host']` - IP/hostname of your OpenTSDB instance (default '127.0.0.1')
 * `node['bosun']['tsdb_port']` - Port of your OpenTSDB instance (default '4242')
+* `node['bosun']['install_style']`  - Way to install binary. Set to 'golang' to build from sources. Set 'binary' to download realese from github.
+* `node['bosun']['version']`   - Release to install. Check [bosun github](https://github.com/bosun-monitor/bosun/releases) for available releases (default '0.4').
 * `node['bosun']['conf_dir']`  - Configuration directory (default '/etc/bosun/')
 * `node['bosun']['log_dir']`   - Logs directory (default '/var/log/bosun/')
 * `node['bosun']['open_files']` - Max openfiles for bosun process (default '65535')
