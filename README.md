@@ -5,7 +5,7 @@ bosun cookbook
 [![Code Climate](https://codeclimate.com/github/ptqa/chef-bosun.png)](https://codeclimate.com/github/ptqa/chef-bosun)
 [![Gemnasium](https://img.shields.io/gemnasium/ptqa/chef-bosun.svg)](https://gemnasium.com/ptqa/chef-bosun)
 [![License](https://img.shields.io/badge/license-Apache_2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
-===================
+
 Chef cookbook to install & configure [bosun-server](ihttps://github.com/bosun-monitor/bosun). This cookbook only installs bosun binary and creates a service with your favorite init system. ***IT DOES NOT INSTALL OPENTSDB/HBASE.***
 
 Requirements
