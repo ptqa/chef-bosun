@@ -1,0 +1,33 @@
+---
+driver:
+  name: docker
+  binary: /usr/bin/docker
+  use_sudo: false
+  provision_command:
+    - curl -L https://www.chef.io/chef/install.sh | bash -s -- -v 12.6.0
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: centos
+  - name: ubuntu
+  - name: debian
+
+suites:
+  - name: binary
+    run_list:
+      - recipe[apt]
+      - recipe[yum]
+      - recipe[bosun::default]
+
+  - name: source
+    excludes:
+      - centos
+      - debian
+    run_list:
+      - recipe[apt]
+      - recipe[bosun::default]
+    attributes:
+      bosun:
+        install_style: source
