@@ -25,6 +25,7 @@ end
 
 poise_service 'bosun' do
   provider node['bosun']['init_style'].to_sym
-  command "#{node['bosun']['install_path']} -c=#{node['bosun']['conf_dir']}/bosun.conf"
-  options template: 'bosun:bosun' if node['bosun']['init_style'] == 'runit' # cookbook bosun, template sv-bosun-run.erb
+  # hacky way to set ulimit without modifying service template
+  command "bash -c 'ulimit -n #{node['bosun']['open_files']}; \
+    exec #{node['bosun']['install_path']} -c=#{node['bosun']['conf_dir']}/bosun.conf'"
 end

@@ -17,6 +17,8 @@ platforms:
 suites:
   - name: binary
     run_list:
+      - recipe[apt]
+      - recipe[yum]
       - recipe[bosun::default]
 
   - name: source
@@ -24,6 +26,7 @@ suites:
       - centos
       - debian
     run_list:
+      - recipe[apt]
       - recipe[bosun::default]
     attributes:
       bosun:
